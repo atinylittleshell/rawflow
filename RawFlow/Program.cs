@@ -75,11 +75,14 @@ namespace RawFlow
 
             ExtractDNGs(mlvFile, temporaryWorkingDirectory);
 
-            GenerateTIFFs(temporaryWorkingDirectory);
+            if (Settings.GenerateProxyVideo)
+            {
+                GenerateTIFFs(temporaryWorkingDirectory);
 
-            GenerateProxyVideo(mlvFile, temporaryWorkingDirectory);
+                GenerateProxyVideo(mlvFile, temporaryWorkingDirectory);
 
-            Cleanup(temporaryWorkingDirectory);
+                Cleanup(temporaryWorkingDirectory);
+            }
 
             if (temporaryWorkingDirectory != resultDirectory)
             {

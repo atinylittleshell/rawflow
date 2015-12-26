@@ -13,6 +13,7 @@ namespace RawFlow
         {
             TemporaryWorkingDirectory = GetConfiguredDirectory("TemporaryWorkingDirectory");
             OutputDirectory = GetConfiguredDirectory("OutputDirectory");
+            GenerateProxyVideo = System.Configuration.ConfigurationManager.AppSettings["GenerateProxyVideo"] == "true";
         }
 
         private static string GetConfiguredDirectory(string key)
@@ -38,5 +39,7 @@ namespace RawFlow
         public static string OutputDirectory { get; set; }
 
         public static string TemporaryWorkingDirectory { get; set; }
+
+        public static bool GenerateProxyVideo { get; set; }
     }
 }
